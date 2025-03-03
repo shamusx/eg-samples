@@ -1,8 +1,8 @@
 apiVersion: gateway.envoyproxy.io/v1alpha1
 kind: EnvoyProxy
 metadata:
-  name: eg-v121
-  namespace: echo
+  name: eg-v130
+  namespace: envoy-gateway
 spec:
   logging:
     level:
@@ -11,6 +11,6 @@ spec:
     kubernetes:
       envoyDeployment:
         container:
-          image: envoyproxy/envoy:v1.25-latest
+          image: envoyproxy/envoy:v1.30-latest
         pod: {}
     type: Kubernetes

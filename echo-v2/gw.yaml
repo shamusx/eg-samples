@@ -5,7 +5,12 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: selfsigned-cluster-issuer
 spec:
-  gatewayClassName: teg-v2
+  gatewayClassName: teg
+  infrastructure:
+    parametersRef:
+      group: gateway.envoyproxy.io
+      kind: EnvoyProxy
+      name: eg-v130
   listeners:
     - name: http
       protocol: HTTP
