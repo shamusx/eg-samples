@@ -11,6 +11,6 @@ spec:
     kubernetes:
       envoyDeployment:
         container:
-        image: envoyproxy/envoy:v1.25-latest
+          image: envoyproxy/envoy:v1.25-latest
         pod: {}
     type: Kubernetes
