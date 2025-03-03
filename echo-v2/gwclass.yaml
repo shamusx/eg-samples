@@ -8,4 +8,4 @@ spec:
     group: gateway.envoyproxy.io
     kind: EnvoyProxy
     name: eg-v121
-    namespace: envoy-gateway-system
+    namespace: echo
