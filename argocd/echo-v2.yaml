@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: "https://github.com/shamusx/musical-parakeet.git"
     targetRevision: "main"  # Branch, tag, or commit hash
-    path: "echo"
+    path: "echo-v2"
   destination:
     server: https://kubernetes.default.svc
     namespace: echo

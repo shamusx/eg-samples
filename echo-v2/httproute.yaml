@@ -6,7 +6,7 @@ spec:
   parentRefs:
     - group: gateway.networking.k8s.io
       kind: Gateway
-      name: teg-echo-gateway
+      name: teg-echo-gateway-v2
   hostnames:
     - echo-teg.tetrate.io
   rules:
