@@ -1,0 +1,21 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: teg-echo-gateway-v2
+  annotations:
+    cert-manager.io/cluster-issuer: selfsigned-cluster-issuer
+spec:
+  gatewayClassName: teg-v2
+  listeners:
+    - name: http
+      protocol: HTTP
+      port: 80
+    - name: https
+      protocol: HTTPS
+      port: 443
+      hostname: echo-teg.tetrate.io
+      tls:
+        mode: Terminate
+        certificateRefs:
+        - kind: Secret
+          name: teg-echo-cert

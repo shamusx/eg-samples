@@ -1,0 +1,16 @@
+apiVersion: gateway.envoyproxy.io/v1alpha1
+kind: EnvoyProxy
+metadata:
+  name: eg-v121
+  namespace: default
+spec:
+  logging:
+    level:
+      default: warn
+  provider:
+    kubernetes:
+      envoyDeployment:
+        container:
+        image: envoyproxy/envoy:v1.25-latest
+        pod: {}
+    type: Kubernetes
