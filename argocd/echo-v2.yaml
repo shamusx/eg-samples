@@ -11,10 +11,10 @@ spec:
     path: "echo-v2"
   destination:
     server: https://kubernetes.default.svc
-    # namespace: echo
+    namespace: envoy-gateway
   syncPolicy:
     automated:
       prune: true
       selfHeal: true  
-    # syncOptions:
-    #   - CreateNamespace=true
+    syncOptions:
+      - CreateNamespace=true
