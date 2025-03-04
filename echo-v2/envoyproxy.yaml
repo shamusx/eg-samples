@@ -9,9 +9,12 @@ spec:
   provider:
     kubernetes:
       envoyDeployment:
+        patch:
+          value:
+            metadata:
+              labels:
+                app.kubernetes.io/instance: echo-v2
         container:
           image: envoyproxy/envoy:v1.30-latest
-        pod:
-          labels:
-            app.kubernetes.io/instance: echo-v2
+        pod: {}
     type: Kubernetes
