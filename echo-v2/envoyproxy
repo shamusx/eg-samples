@@ -2,7 +2,6 @@ apiVersion: gateway.envoyproxy.io/v1alpha1
 kind: EnvoyProxy
 metadata:
   name: eg-v130
-  namespace: envoy-gateway
 spec:
   logging:
     level:

@@ -11,7 +11,7 @@ spec:
     path: "echo-v2"
   destination:
     server: https://kubernetes.default.svc
-    namespace: envoy-gateway
+    namespace: echo
   syncPolicy:
     automated:
       prune: true
