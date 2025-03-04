@@ -12,5 +12,7 @@ spec:
       envoyDeployment:
         container:
           image: envoyproxy/envoy:v1.30-latest
-        pod: {}
+        pod:
+          labels:
+            app.kubernetes.io/instance: echo-v2
     type: Kubernetes
