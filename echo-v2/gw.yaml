@@ -11,6 +11,7 @@ spec:
       group: gateway.envoyproxy.io
       kind: EnvoyProxy
       name: eg-v130
+      namespace: echo
   listeners:
     - name: http
       protocol: HTTP
