@@ -8,18 +8,6 @@ spec:
       default: warn
   provider:
     kubernetes:
-      envoyDeployment:
-        patch:
-          value:
-            metadata:
-              labels:
-                app.kubernetes.io/instance: echo-v2
-      envoyService:
-        patch:
-          value:
-            metadata:
-              labels:
-                app.kubernetes.io/instance: echo-v2
         container: {}
         pod: {}
     type: Kubernetes

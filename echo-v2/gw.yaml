@@ -7,6 +7,8 @@ metadata:
 spec:
   gatewayClassName: teg
   infrastructure:
+    labels:
+      app.kubernetes.io/instance: echo-v2
     parametersRef:
       group: gateway.envoyproxy.io
       kind: EnvoyProxy
