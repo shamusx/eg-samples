@@ -11,7 +11,7 @@ spec:
     kubernetes:
       envoyHpa:
         minReplicas: 1
-        maxReplicas: 2
+        maxReplicas: 4
         metrics:
           - resource:
               name: cpu
