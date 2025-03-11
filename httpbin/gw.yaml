@@ -1,0 +1,29 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: httpbin-gw-eg
+  annotations:
+    cert-manager.io/cluster-issuer: selfsigned-cluster-issuer
+spec:
+  gatewayClassName: teg
+  infrastructure:
+    labels:
+      app.kubernetes.io/instance: httpbin-eg
+    parametersRef:
+      group: gateway.envoyproxy.io
+      kind: EnvoyProxy
+      name: httpbin-ep
+      namespace: httpbin
+  listeners:
+    - name: http
+      protocol: HTTP
+      port: 80
+    - name: https
+      protocol: HTTPS
+      port: 443
+      hostname: httpbin.tetrate.int
+      tls:
+        mode: Terminate
+        certificateRefs:
+        - kind: Secret
+          name: teg-echo-cert
