@@ -4,6 +4,15 @@ metadata:
   name: httpbin-ep
 spec:
   telemetry:
+    tracing:
+      # sample 100% of requests
+      samplingRate: 100
+      provider:
+        backendRefs:
+        - name: otel-collector
+          namespace: monitoring
+          port: 4317
+        type: OpenTelemetry
     accessLog:
       settings:
         - format:
