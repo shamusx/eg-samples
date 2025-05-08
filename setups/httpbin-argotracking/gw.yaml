@@ -13,7 +13,6 @@ spec:
       group: gateway.envoyproxy.io
       kind: EnvoyProxy
       name: httpbin-ep-argotracking
-      namespace: httpbin
   listeners:
     - name: http
       protocol: HTTP
