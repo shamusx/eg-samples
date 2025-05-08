@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default  # Change if using a different ArgoCD project
   source:
-    repoURL: "https://github.com/my-git-repo.git"
+    repoURL: "https://github.com/shamusx/musical-parakeet.git"
     targetRevision: "main"  # Branch, tag, or commit hash
     path: "setups/httpbin-argotracking"
   destination:
