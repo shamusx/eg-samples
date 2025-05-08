@@ -5,7 +5,7 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: selfsigned-cluster-issuer
 spec:
-  gatewayClassName: teg
+  gatewayClassName: eg
   infrastructure:
     labels:
       app.kubernetes.io/instance: httpbin-argotracking
