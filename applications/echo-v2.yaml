@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: echo-v2
+  namespace: argocd  # Ensure this matches your ArgoCD namespace
+spec:
+  project: default  # Change if using a different ArgoCD project
+  source:
+    repoURL: "https://github.com/shamusx/musical-parakeet.git"
+    targetRevision: "main"  # Branch, tag, or commit hash
+    path: "setups/echo-v2"
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: echo
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true  
+    syncOptions:
+      - CreateNamespace=true

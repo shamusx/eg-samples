@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: httpbin-eg
+  name: httpbin-app
   namespace: argocd  # Ensure this matches your ArgoCD namespace
 spec:
   project: default  # Change if using a different ArgoCD project
   source:
-    repoURL: "https://github.com/shamusx/musical-parakeet.git"
+    repoURL: "https://github.com/my-git-repo.git"
     targetRevision: "main"  # Branch, tag, or commit hash
-    path: "httpbin"
+    path: "setups/httpbin"
   destination:
     server: https://kubernetes.default.svc
     namespace: httpbin
@@ -18,3 +18,4 @@ spec:
       selfHeal: true  
     syncOptions:
       - CreateNamespace=true
+      - ServerSideApply=true

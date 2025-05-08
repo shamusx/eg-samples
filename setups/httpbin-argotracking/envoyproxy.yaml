@@ -1,0 +1,18 @@
+apiVersion: gateway.envoyproxy.io/v1alpha1
+kind: EnvoyProxy
+metadata:
+  name: httpbin-ep-argotracking
+spec:
+  provider:
+    type: Kubernetes
+    kubernetes:
+      envoyHpa:
+        minReplicas: 1
+        maxReplicas: 4
+        metrics:
+          - resource:
+              name: cpu
+              target:
+                averageUtilization: 60
+                type: Utilization
+            type: Resource
